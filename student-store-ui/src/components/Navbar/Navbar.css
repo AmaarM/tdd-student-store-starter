@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #333;
+}
+.link{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    padding: 15px 15px;
+}
