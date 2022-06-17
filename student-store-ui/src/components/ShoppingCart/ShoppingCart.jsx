@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import "./ShoppingCart.css"
 
+
 export default function ShoppingCart(props){
     
     //Puts items in shopping cart into Array for ease of access.
-    let cartArr = [{itemId:0, quantity:0}];
-    props.shoppingCart.map(e => {
+    let cartArr = [{}];
+    props.shoppingCart.map((e, index) => {
         if(e.quantity > 0){
             cartArr.push({itemId: e.itemId, quantity:e.quantity})
         }
@@ -16,12 +17,44 @@ export default function ShoppingCart(props){
     function getItem(num){
         let item = {};
         props.products.map((e, index)=> {
-            if(e.id === num){
+            if(e.id === num && e != undefined){
                 item = e;
             }
         })
         return item;
     }
+
+    let total = 0;
+    function getTotal(){
+        props.shoppingCart.map((e, index) => {
+            if(e.itemId === "" || e.quantity === 0){
+                return;
+            }
+            else{
+                let temp = getItem(e.itemId)
+                total += (temp.price * e.quantity);
+            }
+        })
+
+    }  
+
+
+
+
+    let temp = true;
+    function showTotal(){
+        if(total > 0){
+            temp = true;
+        }
+        else{
+           temp = false;
+        }
+    }
+
+    
+    getTotal();
+    showTotal();
+
 
     return (
         <div className="shopping-cart">
@@ -43,7 +76,7 @@ export default function ShoppingCart(props){
                         let item = getItem(e.itemId);
                     return (
                         
-                        <h5 className="item">{item.name}</h5>
+                        <h5 className="item">{e.quantity}</h5>
                         
                     )
                     })}
@@ -59,8 +92,8 @@ export default function ShoppingCart(props){
                     })}
             </div>
             <div className="total">
-                <h3>Total</h3>
-                <h2></h2>
+                <h3 className="total-title">Total</h3>
+                <h2 className={temp ? "total-amount" : "total-closed"}>{total}</h2>
             </div>
 
         </div>

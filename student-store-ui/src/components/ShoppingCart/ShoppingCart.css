@@ -30,3 +30,23 @@
 .total{
     margin-bottom: 10px;
 }
+
+.total{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:0;
+    align-items: center;
+}
+.total-amount{
+    text-decoration: underline;
+    color: white;
+    text-decoration-color: white;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+    visibility: visible;
+}
+
+.total-closed{
+    visibility: hidden;
+}

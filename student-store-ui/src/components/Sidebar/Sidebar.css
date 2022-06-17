@@ -18,9 +18,13 @@
 
 .closed{
     width: 80px;
-
+}
+.toggle-button{
+    cursor:pointer
 }
 
 .checkout-Btn{
     margin-top: 10px;
+    cursor: pointer;
 }
+

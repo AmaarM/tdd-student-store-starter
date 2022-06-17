@@ -6,7 +6,7 @@ import "./App.css"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import axios from 'axios'
 import ProductDetail from "../ProductDetail/ProductDetail"
-
+import SubNavbar from "../SubNavbar/SubNavbar"
 
 
 
@@ -17,9 +17,12 @@ export default function App() {
   const[isOpen, setOpen] = React.useState(false);
   const[shoppingCart, setShoppingCart] = React.useState([{itemId:"", quantity: 0}]);
   const[checkOutForm, setCheckOutForm] = React.useState({value:0, name:""});
-  const[total, setTotal] = React.useState(0); 
+  const[input, setInput] = React.useState("");
+  const[category,setCategory] = React.useState("");
+
 
   async function getProducts(){
+    setFetching(true);
     const data = await axios.get("https://codepath-store-api.herokuapp.com/store")
     .then((e) => {
       setProducts(e.data.products);
@@ -29,13 +32,36 @@ export default function App() {
     })
   }
   
-  
   React.useEffect(() => {getProducts()},[])
+  let filterArr = [];
+
+  function filterProduts(input){
+    filterArr = products.filter(e => {
+      let name = e.name;
+      name = name.toLowerCase();
+      return (name.includes(input))
+    })
+  } 
+  filterProduts(input);
+
+  let categoryArr = [];
+  function filterCategories(category){
+    category = category.toLowerCase();
+    if(category === "nothing"){
+      return categoryArr = products;
+    }
+    categoryArr = products.filter(e => {
+      return e.category.includes(category);
+    })
+  }
   
-  
+  filterCategories(category);
+
+
   const handleOnToggle = () => {
     setOpen(prev => !prev)
   }
+
 
  function handleAddItemToCart(productID){
     let found = false;
@@ -94,12 +120,13 @@ export default function App() {
     setCheckOutForm({value:value, name:name})
   }
 
-  function handleOnSubmitCheckoutForm(){
-    
+  async function handleOnSubmitCheckoutForm(){
+     //let data = axios.post("https://codepath-store-api.herokuapp.com/store")
+      //console.log(data);
   }
 
+  handleOnSubmitCheckoutForm();
 
-  
   return (
     <div className="app">
       <BrowserRouter>
@@ -111,10 +138,18 @@ export default function App() {
             getProducts={products}
             checkOutForm={checkOutForm} 
             handleOnCheckoutFormChange={handleOnCheckoutFormChange} 
-            handleOnSubmitCheckoutForm={handleAddItemToCart} 
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} 
             handleOnToggle={handleOnToggle}
             />
-          <Home handleAddItemToCart={handleAddItemToCart} products={products} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart}/>
+          <Home 
+            handleAddItemToCart={handleAddItemToCart} products={products} 
+            handleRemoveItemFromCart={handleRemoveItemFromCart} 
+            shoppingCart={shoppingCart} 
+            setInput={setInput} 
+            filterArr={filterArr}
+            categoryArr={categoryArr}
+            setCategory={setCategory}
+          />
           <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart}/>
         </main>
       </BrowserRouter>

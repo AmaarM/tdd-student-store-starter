@@ -16,7 +16,7 @@ export default function Sidebar(props) {
             <line x1="4" y1="4" x2="4" y2="20" />
             </svg>
         </button>
-        <button className="checkout-Btn">
+        <button className={props.isOpen ? "closed" : "checkout-Btn"}>
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-checkbox" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#000000" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <polyline points="9 11 12 14 20 6" />
@@ -25,7 +25,7 @@ export default function Sidebar(props) {
         </button>
         
         
-        <button className="checkout-Btn">
+        <button className={props.isOpen ? "closed" : "checkout-Btn"}>
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-credit-card" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#000000" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <rect x="3" y="5" width="18" height="14" rx="3" />
@@ -35,7 +35,13 @@ export default function Sidebar(props) {
           </svg>
         </button>
       <ShoppingCart isOpen={props.isOpen} products={props.getProducts} shoppingCart={props.shoppingCart}/>
-      <CheckoutForm />
+      <CheckoutForm 
+        isOpen={props.isOpen} 
+        shoppingCart={props.shoppingCart} 
+        checkOutForm={props.checkOutForm} 
+        handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
+        handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
+      />
     </section>
   )
 }
