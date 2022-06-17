@@ -3,8 +3,9 @@ import "./ProductCard.css"
 export default function ProductCard(props){
     let ProductPrice = ((props.product.price * 100) / 100).toFixed(2);
     let quantity = 0;
-    
-    
+
+    //maps to find the specific product and grabs the quantity
+    //to display
     props.shoppingCart.map(e => {
         if(e.itemId === props.product.id){
             if(quantity >= 0){

@@ -21,6 +21,7 @@ export default function App() {
   const[category,setCategory] = React.useState("");
 
 
+  //Gets the products using the API and stores them
   async function getProducts(){
     setFetching(true);
     const data = await axios.get("https://codepath-store-api.herokuapp.com/store")
@@ -33,8 +34,9 @@ export default function App() {
   }
   
   React.useEffect(() => {getProducts()},[])
+  
+  //Gets the filtered products using the input and stores them
   let filterArr = [];
-
   function filterProduts(input){
     filterArr = products.filter(e => {
       let name = e.name;
@@ -44,6 +46,7 @@ export default function App() {
   } 
   filterProduts(input);
 
+  //Gets the products in certain categories and stores them
   let categoryArr = [];
   function filterCategories(category){
     category = category.toLowerCase();
@@ -58,11 +61,12 @@ export default function App() {
   filterCategories(category);
 
 
+  //Toggle for side bar
   const handleOnToggle = () => {
     setOpen(prev => !prev)
   }
 
-
+//Adds item to cart state
  function handleAddItemToCart(productID){
     let found = false;
     let item = 0;
@@ -85,7 +89,7 @@ export default function App() {
     }
   }
 
-
+//Removes item from cart state
   function handleRemoveItemFromCart(productID){
     let found = false;
     let item = 0;
@@ -116,16 +120,17 @@ export default function App() {
     }
   } 
 
+  //Handle checkoutFrom change // need to finish
   function handleOnCheckoutFormChange(name, value){
     setCheckOutForm({value:value, name:name})
   }
 
+  //Need to finish
   async function handleOnSubmitCheckoutForm(){
      //let data = axios.post("https://codepath-store-api.herokuapp.com/store")
       //console.log(data);
   }
 
-  handleOnSubmitCheckoutForm();
 
   return (
     <div className="app">

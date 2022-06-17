@@ -5,6 +5,7 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 import SubNavbar from "../SubNavbar/SubNavbar"
 
 export default function Home(props) {
+
   
   return (
     <div className="home">

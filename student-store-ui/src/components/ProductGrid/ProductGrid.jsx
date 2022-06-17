@@ -4,7 +4,8 @@ import "./ProductGrid.css"
 
 export default function ProductGrid(props){
     console.log(props);
-
+    //renderes based on if there are items in the filtered or category arrays,
+    //else renders error with a message.
     if(props.categoryArr.length > 0){
         return(
             <div className="product-grid">

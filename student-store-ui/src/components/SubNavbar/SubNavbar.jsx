@@ -2,6 +2,7 @@ import "./SubNavbar.css"
 
 export default function SubNavbar(props){
 
+    //Function to set the certain category that was clicked on.
     function setCat(e){
         e.preventDefault();
         props.setCategory(e.target.innerText);
