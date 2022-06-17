@@ -5,6 +5,7 @@ import Home from "../Home/Home"
 import "./App.css"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import axios from 'axios'
+import ProductDetail from "../ProductDetail/ProductDetail"
 
 
 
@@ -23,7 +24,7 @@ export default function App() {
       setProducts(e.data.products);
     })
     .catch((error) => {
-      console.log(error);
+      setError("Error r r r ... ");
     })
   }
   
@@ -31,38 +32,57 @@ export default function App() {
   React.useEffect(() => {getProducts()},[])
   
   
-  function handleOnToggle(input){
-      if(input === true){
-        setOpen(false);
-      }
-      else{
-        setOpen(true);
-      }
+  const handleOnToggle = () => {
+    setOpen(prev => !prev)
   }
 
-  function handleAddItemToCart(productID){
-    if(shoppingCart.find(productID)){
-      shoppingCart.find(productID).quantity++;
+ function handleAddItemToCart(productID){
+    let found = false;
+    let item = 0;
+    shoppingCart.forEach(e => {
+      if(e.itemId === productID){
+        found = true;
+        item = e;
+        return;
+      }
+    })
+
+    if(found){
+      let index = shoppingCart.indexOf(item);
+      let obj = shoppingCart.indexOf(item);
+      let newArr = [...shoppingCart];
+      newArr[index].quantity += 1;
+      setShoppingCart(newArr);
     }
     else{
-      setShoppingCart((prevCart) => [...prevCart, {...shoppingCart, itemId:productID, quantity:1}])
+      setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:1}])
     }
   }
-
+  console.log(shoppingCart);
   function handleRemoveItemFromCart(productID){
-    if(shoppingCart.find(productID)){
-      shoppingCart.find(productID).quantity--;
-      if(shoppingCart.find(productID).quantity <= 0){
-        shoppingCart.filter((element => (element.itemId != productID)));
+    let found = false;
+    let item = 0;
+    shoppingCart.forEach(e => {
+      if(e.itemId === productID){
+        found = true;
+        item = e;
+        return;
       }
+    })
+    if(item.quantity <= 0){
+      return;
+    }
+    if(found){
+      let index = shoppingCart.indexOf(item);
+      setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:item.quantity-1}])
     }
     else{
-      return;
+      setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:1}])
     }
   } 
 
   function handleOnCheckoutFormChange(name, value){
-      setCheckOutForm({value:value, name:name})
+    setCheckOutForm({value:value, name:name})
   }
 
   function handleOnSubmitCheckoutForm(){
@@ -75,12 +95,18 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
-          
-          
           <Navbar />
-          <Sidebar />
-          <Home handleAddItemToCart={handleAddItemToCart} products={products} handleRemoveItemFromCart={handleRemoveItemFromCart}/>
+          <Sidebar 
+            isOpen={isOpen}
+            shoppingCart={shoppingCart} 
+            getProducts={products}
+            checkOutForm={checkOutForm} 
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange} 
+            handleOnSubmitCheckoutForm={handleAddItemToCart} 
+            handleOnToggle={handleOnToggle}
+            />
+          <Home handleAddItemToCart={handleAddItemToCart} products={products} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart}/>
+          <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart}/>
         </main>
       </BrowserRouter>
     </div>

@@ -1,0 +1,22 @@
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    height: 350px;
+    margin-top: 35px;
+}
+.intro{
+    color: white;
+    margin: 0px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.intro-1{
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}

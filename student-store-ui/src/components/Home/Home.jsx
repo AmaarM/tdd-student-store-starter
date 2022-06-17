@@ -6,9 +6,10 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 export default function Home(props) {
   return (
     <div className="home">
-      <p>Home</p>
-      <Hero />
-      <ProductGrid />
+      <div className="home-wrapper">
+        <Hero />
+      </div>
+      <ProductGrid products={props.products} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}/>
     </div>
   )
 }

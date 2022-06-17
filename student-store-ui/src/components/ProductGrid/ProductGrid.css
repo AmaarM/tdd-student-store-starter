@@ -1,0 +1,12 @@
+.product-grid{
+    width: 1500px;
+    margin-top: 30px;
+}
+
+.product-grid-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
