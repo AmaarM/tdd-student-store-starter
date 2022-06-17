@@ -1,0 +1,32 @@
+.cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60vw;
+    max-width: 500px;
+    min-width: 100px;
+    color: white;
+}
+
+.closed{
+    display: none;
+}
+
+.cart-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0;
+}
+
+.item{
+    color: white;
+}
+
+.total-amount{
+    display: flex;
+    align-items: center;
+}
+.total{
+    margin-bottom: 10px;
+}

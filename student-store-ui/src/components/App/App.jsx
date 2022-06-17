@@ -17,6 +17,7 @@ export default function App() {
   const[isOpen, setOpen] = React.useState(false);
   const[shoppingCart, setShoppingCart] = React.useState([{itemId:"", quantity: 0}]);
   const[checkOutForm, setCheckOutForm] = React.useState({value:0, name:""});
+  const[total, setTotal] = React.useState(0); 
 
   async function getProducts(){
     const data = await axios.get("https://codepath-store-api.herokuapp.com/store")
@@ -49,7 +50,6 @@ export default function App() {
 
     if(found){
       let index = shoppingCart.indexOf(item);
-      let obj = shoppingCart.indexOf(item);
       let newArr = [...shoppingCart];
       newArr[index].quantity += 1;
       setShoppingCart(newArr);
@@ -58,7 +58,8 @@ export default function App() {
       setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:1}])
     }
   }
-  console.log(shoppingCart);
+
+
   function handleRemoveItemFromCart(productID){
     let found = false;
     let item = 0;
@@ -69,15 +70,23 @@ export default function App() {
         return;
       }
     })
-    if(item.quantity <= 0){
-      return;
-    }
+
+
     if(found){
       let index = shoppingCart.indexOf(item);
-      setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:item.quantity-1}])
+      let newArr = [...shoppingCart];
+      if(newArr[index].quantity === 0){
+        newArr[index].quantity = 0;
+        setShoppingCart(newArr);
+      }
+      else{
+        newArr[index].quantity -= 1;
+        setShoppingCart(newArr);
+      }
+      
     }
     else{
-      setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:1}])
+      setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:0}])
     }
   } 
 
