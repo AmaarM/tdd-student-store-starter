@@ -1,0 +1,28 @@
+.about {
+    width: 100%;
+    max-width: 40vw;
+    min-height: 350px;
+    margin: 40px 0;
+    display: block;
+    align-self: center;
+    border-style: solid;
+    padding: 15px;
+}
+
+.about-title{
+    color: black;
+    text-align: center;
+}
+
+.about-content{
+    display: flex;
+    flex-direction: row;
+}
+.about-desc{
+    color: var(--font-light);
+    font-size: 18px;
+    margin-right: 20px;
+}
+.about-logo{
+    object-fit: contain;
+}

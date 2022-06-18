@@ -7,6 +7,9 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import axios from 'axios'
 import ProductDetail from "../ProductDetail/ProductDetail"
 import SubNavbar from "../SubNavbar/SubNavbar"
+import About from "../About/About"
+import Contact from "../Contact/Contact"
+import Footer from "../Footer/Footer"
 
 
 
@@ -156,6 +159,9 @@ export default function App() {
             setCategory={setCategory}
           />
           <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart}/>
+          <About />
+          <Contact />
+          <Footer />
         </main>
       </BrowserRouter>
     </div>

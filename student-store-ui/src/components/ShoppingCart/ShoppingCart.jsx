@@ -24,6 +24,7 @@ export default function ShoppingCart(props){
         return item;
     }
 
+    //Gets total in shopping cart
     let total = 0;
     function getTotal(){
         props.shoppingCart.map((e, index) => {
@@ -55,6 +56,14 @@ export default function ShoppingCart(props){
     getTotal();
     showTotal();
 
+    //Renders if nothing is in shopping cart.
+    if(props.shoppingCart.length <= 1){
+        return (
+            <div className={props.isOpen ? "cart" : "closed"}> 
+                <h2>Nothing in Cart, Start Shopping!</h2>
+            </div>
+        )
+    }
 
     return (
         <div className="shopping-cart">
@@ -65,7 +74,7 @@ export default function ShoppingCart(props){
                         let item = getItem(e.itemId);
                     return (
                         
-                        <h5 className="item">{item.name}</h5>
+                        <h5 className="cart-product-name">{item.name}</h5>
                         
                     )
                 })}
@@ -76,7 +85,7 @@ export default function ShoppingCart(props){
                         let item = getItem(e.itemId);
                     return (
                         
-                        <h5 className="item">{e.quantity}</h5>
+                        <h5 className="cart-product-quantity">{e.quantity}</h5>
                         
                     )
                     })}
@@ -93,7 +102,7 @@ export default function ShoppingCart(props){
             </div>
             <div className="total">
                 <h3 className="total-title">Total</h3>
-                <h2 className={temp ? "total-amount" : "total-closed"}>{total}</h2>
+                <h2 className={temp ? "subtotal" : "subtotal-closed"}>${total}</h2>
             </div>
 
         </div>
