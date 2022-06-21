@@ -3,6 +3,9 @@ import "./Home.css"
 import Hero from "../Hero/Hero"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import SubNavbar from "../SubNavbar/SubNavbar"
+import Contact from "../Contact/Contact"
+import About from "../About/About"
+
 
 export default function Home(props) {
 
@@ -26,6 +29,7 @@ export default function Home(props) {
         categoryArr={props.categoryArr}
         setCategory={props.setCategory}
         />
+      <About />
     </div>
   )
 }

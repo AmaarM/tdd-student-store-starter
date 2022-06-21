@@ -8,7 +8,7 @@ export default function Navbar() {
       <Logo />
       <div className="link">
         <a href="/" className="link">Home</a>
-        <a href="/" className="link">About</a>
+        <a href="/About" className="link">About</a>
         <a href="/" className="link">Buy Now</a>
       </div>
     </nav>

@@ -3,7 +3,6 @@ import "./ProductGrid.css"
 
 
 export default function ProductGrid(props){
-    console.log(props);
     //renderes based on if there are items in the filtered or category arrays,
     //else renders error with a message.
     if(props.categoryArr.length > 0){
@@ -11,7 +10,7 @@ export default function ProductGrid(props){
             <div className="product-grid">
                 <div className="product-grid-wrapper">
                     {props.categoryArr.map((element, index) => (
-                        <ProductCard product={element} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart} key={index} filterProd={props.filterArr}/>
+                        <ProductCard  product={element} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart} key={index} filterProd={props.filterArr}/>
                     ))}
                 </div>
             </div>

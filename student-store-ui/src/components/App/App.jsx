@@ -3,13 +3,15 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import axios from 'axios'
 import ProductDetail from "../ProductDetail/ProductDetail"
 import SubNavbar from "../SubNavbar/SubNavbar"
 import About from "../About/About"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
+import NotFound from "../Not Found/NotFound"
+import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
 
 
@@ -139,8 +141,8 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          <Navbar />
-          <Sidebar 
+        <Navbar />
+        <Sidebar 
             isOpen={isOpen}
             shoppingCart={shoppingCart} 
             getProducts={products}
@@ -149,7 +151,8 @@ export default function App() {
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} 
             handleOnToggle={handleOnToggle}
             />
-          <Home 
+        <Routes>
+            <Route path="/" element={<Home 
             handleAddItemToCart={handleAddItemToCart} products={products} 
             handleRemoveItemFromCart={handleRemoveItemFromCart} 
             shoppingCart={shoppingCart} 
@@ -157,11 +160,14 @@ export default function App() {
             filterArr={filterArr}
             categoryArr={categoryArr}
             setCategory={setCategory}
-          />
-          <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart}/>
-          <About />
-          <Contact />
-          <Footer />
+            />}>
+            </Route>
+            <Route path="/products/:productId"  element={<ProductDetail  handleAddItemToCart={handleAddItemToCart}  handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} />}></Route>
+            <Route path="/About" element={<About />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+        <Contact />
+        <Footer />
         </main>
       </BrowserRouter>
     </div>
