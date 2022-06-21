@@ -11,19 +11,18 @@ export default function ProductDetail(props){
     async function getProduct(){
         const data = await axios.get(`https://codepath-store-api.herokuapp.com/store/${id.productId}`)
         .then((e) => {
-            setProduct(e.data);
+            setProduct(e.data.product);
         })
         .catch((error) => {
           console.log("error")
         })
     }
-
     React.useEffect(() => {getProduct()},[])
-    console.log(product);
     
+
     return(
         <div className="product-detail">
-            <ProductView product={product} productId={id} quantity={props.shoppingCart.quantity} handleAdditemToCart={props.handleAdditemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}/>
+            <ProductView product={product} productId={id} quantity={props.shoppingCart.quantity} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}/>
         </div>
     )
 }

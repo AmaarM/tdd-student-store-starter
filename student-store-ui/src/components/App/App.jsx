@@ -6,12 +6,10 @@ import "./App.css"
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import axios from 'axios'
 import ProductDetail from "../ProductDetail/ProductDetail"
-import SubNavbar from "../SubNavbar/SubNavbar"
 import About from "../About/About"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
 import NotFound from "../Not Found/NotFound"
-import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
 
 
@@ -132,8 +130,7 @@ export default function App() {
 
   //Need to finish
   async function handleOnSubmitCheckoutForm(){
-     //let data = axios.post("https://codepath-store-api.herokuapp.com/store")
-      //console.log(data);
+
   }
 
 
@@ -153,7 +150,8 @@ export default function App() {
             />
         <Routes>
             <Route path="/" element={<Home 
-            handleAddItemToCart={handleAddItemToCart} products={products} 
+            handleAddItemToCart={handleAddItemToCart} 
+            products={products} 
             handleRemoveItemFromCart={handleRemoveItemFromCart} 
             shoppingCart={shoppingCart} 
             setInput={setInput} 

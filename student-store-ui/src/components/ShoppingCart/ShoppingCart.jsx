@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "./ShoppingCart.css"
 
-
 export default function ShoppingCart(props){
     
     //Puts items in shopping cart into Array for ease of access.
@@ -38,9 +37,6 @@ export default function ShoppingCart(props){
         })
 
     }  
-
-
-
 
     let temp = true;
     function showTotal(){
