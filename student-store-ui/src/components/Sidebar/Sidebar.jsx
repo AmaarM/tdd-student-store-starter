@@ -41,6 +41,7 @@ export default function Sidebar(props) {
         checkOutForm={props.checkOutForm} 
         handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
         handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
+        success={props.success}
       />
     </section>
   )

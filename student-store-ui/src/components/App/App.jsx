@@ -13,6 +13,7 @@ import NotFound from "../Not Found/NotFound"
 
 
 
+
 export default function App() {
   const[isfetching, setFetching] = React.useState(false);
   const[products, setProducts] = React.useState([]);
@@ -22,6 +23,7 @@ export default function App() {
   const[checkOutForm, setCheckOutForm] = React.useState({value:0, name:""});
   const[input, setInput] = React.useState("");
   const[category,setCategory] = React.useState("");
+  const[success, setSuccess] = React.useState(false);
 
 
   //Gets the products using the API and stores them
@@ -119,17 +121,27 @@ export default function App() {
       
     }
     else{
-      setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:0}])
+      setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:0}]);
     }
   } 
 
   //Handle checkoutFrom change // need to finish
   function handleOnCheckoutFormChange(name, value){
-    setCheckOutForm({value:value, name:name})
+    setCheckOutForm({value:value, name:name});
   }
 
   //Need to finish
   async function handleOnSubmitCheckoutForm(){
+    axios.post("https://codepath-store-api.herokuapp.com/store", {
+      user:{name:"", email:""},
+      ShoppingCart: [{itemId:0, quantity:0}]
+    })
+    .then(() => {
+      setSuccess(true);
+    })
+    .catch(() =>{
+      setSuccess(false);
+    })
 
   }
 
@@ -147,6 +159,7 @@ export default function App() {
             handleOnCheckoutFormChange={handleOnCheckoutFormChange} 
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} 
             handleOnToggle={handleOnToggle}
+            success={success}
             />
         <Routes>
             <Route path="/" element={<Home 

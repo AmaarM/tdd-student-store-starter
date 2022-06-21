@@ -13,9 +13,12 @@ export default function CheckoutForm(props){
 
             </input>
 
-            <button className={props.isOpen ? "checkout-button" : "closed"}>Checkout</button>
+            <button className={props.isOpen ? "checkout-button" : "closed"} onClick={props.handleOnSubmitCheckoutForm}>Checkout</button>
         </div>
         
     )
 
 }
+
+//<h2 className={!props.success ? "errorMsg" : "closed"}>Error: Login Failed...</h2>
+//<h2 className={props.success ? "successMsg" : "closed"}>Success!</h2>

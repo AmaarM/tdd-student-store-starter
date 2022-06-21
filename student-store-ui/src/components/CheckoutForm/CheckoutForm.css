@@ -32,3 +32,8 @@
     opacity: .9;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, .5);
 }
+
+.errorMsg{
+    text-align: center;
+    color: white;
+}
