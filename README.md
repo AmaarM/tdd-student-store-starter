@@ -11,10 +11,10 @@ https://streamable.com/q7f841
 #### Core Features
 
 - [X] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-- [ ] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [X] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [X] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
 - [X] User can click to expand the shopping cart in the left navigation.
 - [X] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [X] User can click the '-' button on a product cart to increment that product in the shopping cart.
@@ -37,11 +37,11 @@ The following specifications were met on the Express backend and the React front
 
 **App.jsx**
 
-  - [ ] The core App component that contains the routes for the app and does the initial data fetching
-  - [ ] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
-    - [ ] `/` - Should render the `Home.jsx` component
-    - [ ] `/products/:productId` - should render the `ProductDetail` component
-    - [ ] `*` - anything else should render the `NotFound` component
+  - [X] The core App component that contains the routes for the app and does the initial data fetching
+  - [X] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
+    - [X] `/` - Should render the `Home.jsx` component
+    - [X] `/products/:productId` - should render the `ProductDetail` component
+    - [X] `*` - anything else should render the `NotFound` component
   - [X] Renders the `Navbar` component on every route
   - [X] Renders the `Sidebar` component on every route
   - [X] Should create **at least** the following state variables:
@@ -132,30 +132,30 @@ The following specifications were met on the Express backend and the React front
 
 **ProductDetail.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-detail`
+  - [X] Should render JSX that is wrapped by a `div` element with a `className` of `product-detail`
   - [X] Should accept **at least** the following props:
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
   - [X] Should define **at least** a `product` state variable and updater
-  - [ ] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
-  - [ ] When the component is mounted to the screen...
-    - [ ] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
-    - [ ] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
-    - [ ] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
-    - [ ] It should store the `product` received by the request in state and then render the `ProductView` component.
-    - [ ] If no `product` is found with that `id`, it should render the `NotFound` component
+  - [X] It should leverage the `useParams` hook from `react-router-dom` to extract the `productId` param from the url.
+  - [X] When the component is mounted to the screen...
+    - [X] It should make a `GET` request to the `/store/:productId` endpoint with the `axios.get` method.
+    - [X] The `:productId` part of the request should be replaced with the `productId` pulled from the url.
+    - [X] When the initial request is loading, it should render an `h1` element with the `className` of `loading` and contain the text `"Loading..."`
+    - [X] It should store the `product` received by the request in state and then render the `ProductView` component.
+    - [X] If no `product` is found with that `id`, it should render the `NotFound` component
 
 **ProductView.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
-  - [ ] Should accept **at least** the following props:
+  - [X] Should render JSX that is wrapped by a `div` element with a `className` of `product-view`
+  - [X] Should accept **at least** the following props:
     - `product` - the `product` object returned by the API request
     - `productId` - the id of the product extracted from the url
     - `quantity` - the quantity for this product found in the `shoppingCart`
     - `handleAddItemToCart` - handler function
     - `handleRemoveItemToCart` - handler function
-  - [ ] It should display an `h1` element with the `className` of `product-id` that contains the text: `Product #` followed by the `productId` prop
-  - [ ] It should render a `ProductCard` component and pass it the props it needs. It should also set the `showDescription` prop to `true` for this product card.
+  - [X] It should display an `h1` element with the `className` of `product-id` that contains the text: `Product #` followed by the `productId` prop
+  - [X] It should render a `ProductCard` component and pass it the props it needs. It should also set the `showDescription` prop to `true` for this product card.
 
 **ProductCard.jsx**
 
