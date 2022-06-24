@@ -166,6 +166,40 @@
       ],
       "total": 31.504875,
       "createdAt": "2022-06-24T08:19:54.161Z"
+    },
+    {
+      "id": 2,
+      "name": "amaarmo123@gmail.com",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": 5.41575,
+      "createdAt": "2022-06-24T08:31:05.669Z"
+    },
+    {
+      "id": 3,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 8,
+          "quantity": 2
+        },
+        {
+          "itemId": 9,
+          "quantity": 2
+        }
+      ],
+      "total": 54.33149999999999,
+      "createdAt": "2022-06-24T08:31:14.142Z"
     }
   ]
 }
