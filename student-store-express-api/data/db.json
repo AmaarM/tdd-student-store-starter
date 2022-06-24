@@ -148,7 +148,70 @@
   "purchases": [
     {
       "id": 1,
+      "name": "amaarmo123@gmail.com",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 2
+        },
+        {
+          "itemId": 6,
+          "quantity": 1
+        }
+      ],
+      "total": 29.873624999999997,
+      "createdAt": "2022-06-24T20:42:14.569Z"
+    },
+    {
+      "id": 2,
       "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 6,
+          "quantity": 2
+        }
+      ],
+      "total": 63.05325,
+      "createdAt": "2022-06-24T20:42:20.397Z"
+    },
+    {
+      "id": 3,
+      "name": "Amaar Mohamed",
+      "email": "mr.amaar52@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        },
+        {
+          "itemId": 6,
+          "quantity": 2
+        }
+      ],
+      "total": 63.05325,
+      "createdAt": "2022-06-24T20:42:37.753Z"
+    },
+    {
+      "id": 4,
+      "name": "Amaar",
       "email": "amaarmo123@gmail.com",
       "order": [
         {
@@ -160,16 +223,169 @@
           "quantity": 2
         },
         {
+          "itemId": 5,
+          "quantity": 1
+        }
+      ],
+      "total": 17.922,
+      "createdAt": "2022-06-24T20:42:53.772Z"
+    },
+    {
+      "id": 5,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 1
+        },
+        {
+          "itemId": 6,
+          "quantity": 1
+        },
+        {
+          "itemId": 9,
+          "quantity": 1
+        }
+      ],
+      "total": 35.321999999999996,
+      "createdAt": "2022-06-24T20:43:02.630Z"
+    },
+    {
+      "id": 6,
+      "name": "Amaar Mohamed",
+      "email": "codebyamaar@gmail.com",
+      "order": [
+        {
+          "itemId": 8,
+          "quantity": 1
+        },
+        {
+          "itemId": 11,
+          "quantity": 1
+        },
+        {
+          "itemId": 12,
+          "quantity": 1
+        }
+      ],
+      "total": 674.22825,
+      "createdAt": "2022-06-24T20:43:07.733Z"
+    },
+    {
+      "id": 7,
+      "name": "Amaar Mohamed",
+      "email": "mr.amaar52@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": 5.41575,
+      "createdAt": "2022-06-24T20:44:30.713Z"
+    },
+    {
+      "id": 8,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [],
+      "total": 0,
+      "createdAt": "2022-06-24T20:44:48.449Z"
+    },
+    {
+      "id": 9,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": 3.2625,
+      "createdAt": "2022-06-24T20:44:54.691Z"
+    },
+    {
+      "id": 10,
+      "name": "Amaar Mohamed",
+      "email": "mr.amaar52@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "total": 1.63125,
+      "createdAt": "2022-06-24T20:46:48.294Z"
+    },
+    {
+      "id": 11,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 1
+        },
+        {
           "itemId": 6,
           "quantity": 1
         }
       ],
-      "total": 31.504875,
-      "createdAt": "2022-06-24T08:19:54.161Z"
+      "total": 29.895374999999998,
+      "createdAt": "2022-06-24T20:46:53.299Z"
     },
     {
-      "id": 2,
-      "name": "amaarmo123@gmail.com",
+      "id": 12,
+      "name": "Amaar Mohamed",
+      "email": "mr.amaar52@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 1
+        }
+      ],
+      "total": 8.15625,
+      "createdAt": "2022-06-24T20:46:59.243Z"
+    },
+    {
+      "id": 13,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 8,
+          "quantity": 4
+        },
+        {
+          "itemId": 9,
+          "quantity": 1
+        }
+      ],
+      "total": 92.38312499999999,
+      "createdAt": "2022-06-24T20:47:06.979Z"
+    },
+    {
+      "id": 14,
+      "name": "Amaar Mohamed",
+      "email": "mr.amaar52@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "total": 1.63125,
+      "createdAt": "2022-06-24T20:47:16.013Z"
+    },
+    {
+      "id": 15,
+      "name": "Amaar Mohamed",
       "email": "amaarmo123@gmail.com",
       "order": [
         {
@@ -182,24 +398,108 @@
         }
       ],
       "total": 5.41575,
-      "createdAt": "2022-06-24T08:31:05.669Z"
+      "createdAt": "2022-06-24T20:48:16.437Z"
     },
     {
-      "id": 3,
+      "id": 16,
       "name": "Amaar Mohamed",
-      "email": "amaarmo123@gmail.com",
+      "email": "mr.amaar52@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 3
+        },
+        {
+          "itemId": 6,
+          "quantity": 4
+        }
+      ],
+      "total": 111.42524999999999,
+      "createdAt": "2022-06-24T20:48:23.169Z"
+    },
+    {
+      "id": 17,
+      "name": "amaarmo123@gmail.com",
+      "email": "mr.amaar52@gmail.com",
       "order": [
         {
           "itemId": 8,
           "quantity": 2
         },
         {
-          "itemId": 9,
+          "itemId": 7,
+          "quantity": 2
+        },
+        {
+          "itemId": 4,
           "quantity": 2
         }
       ],
-      "total": 54.33149999999999,
-      "createdAt": "2022-06-24T08:31:14.142Z"
+      "total": 61.40024999999999,
+      "createdAt": "2022-06-24T20:50:12.145Z"
+    },
+    {
+      "id": 18,
+      "name": "amaar@gmail,com",
+      "email": "amaar",
+      "order": [],
+      "total": 0,
+      "createdAt": "2022-06-24T20:50:33.612Z"
+    },
+    {
+      "id": 19,
+      "name": "Amaar@gmail.com",
+      "email": "amaar",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-06-24T20:50:41.997Z"
+    },
+    {
+      "id": 20,
+      "name": "123@gmail.com",
+      "email": "amaar",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 4
+        },
+        {
+          "itemId": 6,
+          "quantity": 3
+        }
+      ],
+      "total": 97.842375,
+      "createdAt": "2022-06-24T20:50:52.434Z"
+    },
+    {
+      "id": 21,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 11.919,
+      "createdAt": "2022-06-24T20:51:29.132Z"
     }
   ]
 }

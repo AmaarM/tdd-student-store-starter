@@ -95,7 +95,7 @@ export default function App() {
 
     if(found){
       let index = shoppingCart.indexOf(item);
-      let newArr = [...shoppingCart];
+      let newArr = [...shoppingCart]
       newArr[index].quantity += 1;
       setShoppingCart(newArr);
     }
@@ -116,7 +116,6 @@ export default function App() {
       }
     })
 
-
     if(found){
       let index = shoppingCart.indexOf(item);
       let newArr = [...shoppingCart];
@@ -134,6 +133,8 @@ export default function App() {
       setShoppingCart((prevCart) => [...prevCart, {itemId:productID, quantity:0}]);
     }
   } 
+
+  console.log(shoppingCart)
 
   //Handle checkoutFrom change // need to finish
   function handleOnCheckoutFormChange(e){

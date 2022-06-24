@@ -7,7 +7,6 @@ export default function CheckoutForm(props) {
         props.handleOnSubmitCheckoutForm();
         props.getPurchases();
     }
-React.useEffect(() => {props.getPurchases()},[])
   return (
     <div className="checkout-form">
       <h3 className={props.isOpen ? "checkout-title" : "closed"}>Email</h3>

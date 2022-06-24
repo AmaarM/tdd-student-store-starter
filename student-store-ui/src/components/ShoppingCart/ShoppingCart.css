@@ -37,7 +37,7 @@
 }
 .subtotal{
     margin: 0px;
-    font-size: 16px;
+    font-size: 20px;
 }
 .total-title{
     text-decoration: underline;
@@ -48,6 +48,20 @@
     visibility: visible;
 }
 
-.subtotal-closed{
-    visibility: hidden;
+
+.closed1, .closed2{
+    font-size: 12px;
+}
+
+.closed1{
+    text-decoration: underline;
+    color: white;
+    text-decoration-color: white;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+    margin-top: 15px;
+}
+
+.closed2{
+    margin-top: 0px;
 }
