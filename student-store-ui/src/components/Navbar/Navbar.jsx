@@ -1,6 +1,6 @@
 import * as React from "react"
 import "./Navbar.css"
-import Logo from "/Users/amaar/tdd-student-store-starter/student-store-ui/src/components/Logo/Logo"
+import Logo from "../Logo/Logo"
 
 export default function Navbar() {
   return (

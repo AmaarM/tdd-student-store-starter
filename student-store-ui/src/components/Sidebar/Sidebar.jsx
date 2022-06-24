@@ -2,6 +2,7 @@ import * as React from "react"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import "./Sidebar.css"
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
+import Receipt from "../Receipt/Receipt";
 
 
 export default function Sidebar(props) {
@@ -42,7 +43,9 @@ export default function Sidebar(props) {
         handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} 
         handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
         success={props.success}
+        getPurchases={props.getPurchases}
       />
+      <Receipt products={props.getProducts} purchases={props.purchases} isOpen={props.isOpen} shoppingCart={props.shoppingCart}/>
     </section>
   )
 }

@@ -9,7 +9,7 @@ export default function ProductDetail(props){
     const id = useParams();
 
     async function getProduct(){
-        const data = await axios.get(`https://codepath-store-api.herokuapp.com/store/${id.productId}`)
+        const data = await axios.get(`http://localhost:3001/store/${id.productId}`)
         .then((e) => {
             setProduct(e.data.product);
         })

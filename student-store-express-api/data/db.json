@@ -145,5 +145,53 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": 9.76575,
+      "createdAt": "2022-06-24T06:22:53.489Z"
+    },
+    {
+      "id": 2,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 1
+        },
+        {
+          "itemId": 6,
+          "quantity": 1
+        }
+      ],
+      "total": 29.895374999999998,
+      "createdAt": "2022-06-24T06:23:01.432Z"
+    },
+    {
+      "id": 3,
+      "name": "Amaar Mohamed",
+      "email": "amaarmo123@gmail.com",
+      "order": [
+        {
+          "itemId": 12,
+          "quantity": 1
+        }
+      ],
+      "total": 434.989125,
+      "createdAt": "2022-06-24T06:23:07.459Z"
+    }
+  ]
 }

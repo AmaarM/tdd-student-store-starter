@@ -1,23 +1,43 @@
-import "./CheckoutForm.css"
+import "./CheckoutForm.css";
+import * as React from "react"
 
-export default function CheckoutForm(props){
-    
-    return (
-        <div className="checkout-form">
-            <h3 className={props.isOpen ? "checkout-title" : "closed"}>Email</h3>
-            <input type="email" className={props.isOpen ? "checkout-form-input" : "closed"} placeholder="student@codepath.org">
+export default function CheckoutForm(props) {
 
-            </input>
-            <h3 className={props.isOpen ? "checkout-title" : "closed"}>Name</h3>
-            <input className={props.isOpen ? "checkout-form-input" : "closed"} placeholder="Student Name">
+    function onSubmitClick(){
+        props.handleOnSubmitCheckoutForm();
+        props.getPurchases();
+    }
+React.useEffect(() => {props.getPurchases()},[])
+  return (
+    <div className="checkout-form">
+      <h3 className={props.isOpen ? "checkout-title" : "closed"}>Email</h3>
+      <input
+        type="email"
+        name="email"
+        value={props.checkOutForm.email}
+        className={props.isOpen ? "checkout-form-input" : "closed"}
+        placeholder="student@codepath.org"
+        onChange={props.handleOnCheckoutFormChange}
+      ></input>
+      <h3 className={props.isOpen ? "checkout-title" : "closed"}>Name</h3>
+      <input
+        className={props.isOpen ? "checkout-form-input" : "closed"}
+        placeholder="Student Name"
+        type="text"
+        name="name"
+        value={props.checkOutForm.name}
+        onChange={props.handleOnCheckoutFormChange}
+      ></input>
 
-            </input>
+      <button
+        className={props.isOpen ? "checkout-button" : "closed"}
+        onClick={onSubmitClick}
+      >
+        Checkout
+      </button>
+    </div>
 
-            <button className={props.isOpen ? "checkout-button" : "closed"} onClick={props.handleOnSubmitCheckoutForm}>Checkout</button>
-        </div>
-        
-    )
-
+  );
 }
 
 //<h2 className={!props.success ? "errorMsg" : "closed"}>Error: Login Failed...</h2>

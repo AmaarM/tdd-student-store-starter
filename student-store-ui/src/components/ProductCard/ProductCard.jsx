@@ -16,7 +16,7 @@ export default function ProductCard(props){
     
     return(
             <div className="product-card" >
-                <a href={`/products/${props.product.id}`}><img src={props.product.image} width={350} height={350}></img></a>
+                <a href={`/store/${props.product.id}`}><img src={props.product.image} width={350} height={350}></img></a>
                 <div className="product-card-desc">
                     <div className="product-desc">
                         <h4 className="product-name">{props.product.name}</h4>

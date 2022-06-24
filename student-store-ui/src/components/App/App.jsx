@@ -11,25 +11,22 @@ import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
 import NotFound from "../Not Found/NotFound"
 
-
-
-
 export default function App() {
   const[isfetching, setFetching] = React.useState(false);
   const[products, setProducts] = React.useState([]);
   const[error, setError] = React.useState("");
   const[isOpen, setOpen] = React.useState(false);
   const[shoppingCart, setShoppingCart] = React.useState([{itemId:"", quantity: 0}]);
-  const[checkOutForm, setCheckOutForm] = React.useState({value:0, name:""});
+  const[checkOutForm, setCheckOutForm] = React.useState({email:"", name:""});
   const[input, setInput] = React.useState("");
   const[category,setCategory] = React.useState("");
   const[success, setSuccess] = React.useState(false);
-
+  const[purchases, setPurchases] = React.useState([]);
 
   //Gets the products using the API and stores them
   async function getProducts(){
     setFetching(true);
-    const data = await axios.get("https://codepath-store-api.herokuapp.com/store")
+    const data = await axios.get("http://localhost:3001/store")
     .then((e) => {
       setProducts(e.data.products);
     })
@@ -37,9 +34,22 @@ export default function App() {
       setError("Error r r r ... ");
     })
   }
+
   
+
+  //Gets the purchases using the API and stores them.
+  async function getPurchase() {
+    const purchases = await axios
+      .get("http://localhost:3001/store/store/purchases")
+      .then((e) => {
+        setPurchases(e.data.purchases);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   React.useEffect(() => {getProducts()},[])
-  
+
   //Gets the filtered products using the input and stores them
   let filterArr = [];
   function filterProduts(input){
@@ -126,23 +136,39 @@ export default function App() {
   } 
 
   //Handle checkoutFrom change // need to finish
-  function handleOnCheckoutFormChange(name, value){
-    setCheckOutForm({value:value, name:name});
+  function handleOnCheckoutFormChange(e){
+    let name = "";
+    let email = "";
+    if(e.target.name === "email"){
+      name = checkOutForm.name;
+      setCheckOutForm({[e.target.name]: e.target.value, name:name})
+    }
+    if(e.target.name === "name"){
+      email = checkOutForm.email;
+      setCheckOutForm({email:email,[e.target.name]: e.target.value})
+    }
   }
-
   //Need to finish
   async function handleOnSubmitCheckoutForm(){
-    axios.post("https://codepath-store-api.herokuapp.com/store", {
-      user:{name:"", email:""},
-      ShoppingCart: [{itemId:0, quantity:0}]
+    let arr = [];
+    shoppingCart.map((e,idx) => {
+      if(e.itemId != 0){
+        arr.push(e);
+      }
     })
-    .then(() => {
-      setSuccess(true);
-    })
-    .catch(() =>{
-      setSuccess(false);
-    })
-
+    const sendForm = async () =>  {
+      const req = await axios.post("http://localhost:3001/store",{ user: checkOutForm, shoppingCart: arr})
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+      }
+      sendForm();
+      getPurchase();
+      setShoppingCart([{itemId:"", quantity: 0}]);
+      setCheckOutForm({email:"", name:""});
   }
 
 
@@ -160,6 +186,8 @@ export default function App() {
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} 
             handleOnToggle={handleOnToggle}
             success={success}
+            purchases={purchases}
+            getPurchases={getPurchase}
             />
         <Routes>
             <Route path="/" element={<Home 
@@ -173,7 +201,7 @@ export default function App() {
             setCategory={setCategory}
             />}>
             </Route>
-            <Route path="/products/:productId"  element={<ProductDetail  handleAddItemToCart={handleAddItemToCart}  handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} />}></Route>
+            <Route path="/store/:productId"  element={<ProductDetail  handleAddItemToCart={handleAddItemToCart}  handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} />}></Route>
             <Route path="/About" element={<About />}></Route>
             <Route path="*" element={<NotFound />}></Route>
         </Routes>
