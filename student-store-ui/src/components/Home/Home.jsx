@@ -15,10 +15,12 @@ export default function Home(props) {
       <div className="home-wrapper">
         <Hero />
       </div>
+      <div className="subNavBar">
       <SubNavbar 
         setInput={props.setInput}         
         setCategory={props.setCategory}
         />
+      </div>
       <ProductGrid 
         products={props.products} 
         handleAddItemToCart={props.handleAddItemToCart} 

@@ -86,11 +86,11 @@ export default function ShoppingCart(props) {
             return <h5 className="item">{item.price}</h5>;
           })}
         </div>
-        <div className="total">
+    </div>
+    <div className="total">
           <h3 className="total-title">Total</h3>
-          <h2 className={temp ? "subtotal" : "subtotal-closed"}>${total}</h2>
+          <h2 className={temp ? "subtotal" : "subtotal-closed"}>${total.toFixed(2)}</h2>
         </div>
       </div>
-    </div>
   );
 }

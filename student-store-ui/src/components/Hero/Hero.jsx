@@ -5,8 +5,8 @@ export default function Hero(){
     return(
         <div className="hero">
             <p className="intro">Welcome!</p>
-            <p className="intro-1">Where all you shopping needs are met!</p>
-            <img className="hero-img" src={HeroImg} ></img>
+            <img className="hero-img" src={HeroImg} width={300} height={300}></img>
+            <p className="intro-1">Where all you're shopping needs are met!</p>
         </div>
     )
 

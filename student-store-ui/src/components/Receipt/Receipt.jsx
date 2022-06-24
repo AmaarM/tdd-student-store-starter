@@ -5,6 +5,7 @@ import * as React from "react";
 
 export default function Receipt(props) {
   const latestPurchase = props.purchases[props.purchases.length - 1];
+  console.log(latestPurchase);
 
   function getProduct(productId, quantity) {
     let product = { product: {}, quantity: 0 };
@@ -25,12 +26,12 @@ export default function Receipt(props) {
     return (
       <div className={props.isOpen ? "receipt-wrapper" : "closed"}>
         <h4 className="receipt">Receipt</h4>
-        <h4 className="receipt-title"></h4>
+        <h4 className="receipt-title">Showing Receipt for {latestPurchase.name} available at {latestPurchase.email}</h4>
         <div className="receipt-body">
           {filterArr.map((e, idx) => (
             <ReceiptCard name={e.product.name} price={e.product.price} quantity={e.quantity}/>
           ))}
-          <h4>Grand Total: {latestPurchase.total.toFixed(2)}</h4>
+          <h4 className="total">Grand Total: {latestPurchase.total.toFixed(2)}</h4>
         </div>
       </div>
     );
