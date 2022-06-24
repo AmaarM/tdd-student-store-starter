@@ -283,18 +283,20 @@ The following specifications were met on the Express backend and the React front
 Reflection
 Week 2 and Week 3: 
 Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
-Yes they did prepare me fundementally, but I'd say I learned the most during this project. Features like playing around with components and sending props down were great. One feature I'd say I wasnt prepared for was the Router and the BrouseRouter portion of the weekly assignment. Just have had enough time to grasp it, but will continue to try. 
+A. Yes they did prepare me fundementally, but I'd say I learned the most during this project. Features like playing around with components and sending props down were great. One feature I'd say I wasnt prepared for was the Router and the BrouseRouter portion of the weekly assignment. Just have had enough time to grasp it, but will continue to try. 
 
 If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
-If I had more time, I would just continue to add the features and polish them with CSS.
+A. If I had more time, I would just continue to add the features and polish them with CSS.
 
 
 Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
-I think it went okay, nothing bad to note on. There were somethings that I would add next time, mostly styling features though.
+A. I think it went okay, nothing bad to note on. There were somethings that I would add next time, mostly styling features though.
 
 Open-source libraries used
 Add any links to open-source libraries used in your project.
-Shout out
+https://expressjs.com/en/starter/installing.html
+https://reactjs.org/docs/hooks-intro.html
+
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
-Week 2 Shoutout: I wanna shout out my pod Aligary, Mariam, Doris. Also wanted to shout out the TA's that helped us during this project. 
-Week 3 Shoutout: Shoutout all my pods this week. Learning the backend was no joke and everyone helping each other out really made it easier. Also shoutout Jeff Astor! 
+A. Week 2 Shoutout: I wanna shout out my pod Aligary, Mariam, Doris. Also wanted to shout out the TA's that helped us during this project. 
+A. Week 3 Shoutout: Shoutout all my pods this week. Learning the backend was no joke and everyone helping each other out really made it easier. Also shoutout Jeff Astor! 
